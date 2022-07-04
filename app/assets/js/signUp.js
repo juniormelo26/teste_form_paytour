@@ -1,4 +1,4 @@
-/* const form = document.querySelector("form");
+const form = document.querySelector("form");
 const inputN = document.querySelector("#nome");
 const inputE = document.querySelector("#email");
 const inputT = document.querySelector("#telefone");
@@ -83,7 +83,7 @@ btn.onclick = () => {
   console.log(observacao);
   console.log(arquivo);
 };
- */
+
 // ================================ FUNÇÃO PARA MASCARA DE TELEFONE =============================================
 function mask(o, f) {
   setTimeout(function () {
