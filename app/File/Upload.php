@@ -56,13 +56,16 @@ class Upload
   /* Metodo para verificar o tipo de arquivo permitido */
   public function getExtensionAllowed()
   {
-    $extension = $this->extension;
+    if (isset($this->extension)) {
+      $extension = $this->extension;
 
-    $extensionsAllowed = array('doc', 'docx', 'pdf');
+      $extensionsAllowed = array('doc', 'docx', 'pdf');
 
-    if (!in_array($extension, $extensionsAllowed)) {
-      echo '<script>alert("Aqrquivo em Formato Inválido!");</script>';
+      if (!in_array($extension, $extensionsAllowed)) {
+        echo '<script>alert("Aqrquivo em Formato Inválido!");</script>';
+      }
     }
+
 
     /*  echo "<pre>";
     var_dump($doc);
