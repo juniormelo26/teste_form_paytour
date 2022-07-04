@@ -1,0 +1,344 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: #FFA500;
+    padding-top: 10px !important;
+}
+
+
+
+body {
+    background: #39404F;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+}
+
+.content {
+    width: 100%;
+    max-width: 850px;
+    border-radius: 4px;
+    border: 1px solid #D9D9D9;
+    padding: 30px;
+    margin: 20px;
+
+
+}
+
+.content .logo {
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.content h4 {
+    text-align: center;
+    font-size: 22px;
+    color: #FFFFFF;
+    font-weight: 400;
+    margin-top: -15px;
+}
+
+.content .subtitle-1 {
+    color: #FFF;
+    text-align: center;
+    font-size: 14px;
+    padding-top: 10px;
+    padding-bottom: 15px;
+}
+
+.content .alert {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+    width: 100%;
+    height: 34px;
+    border-radius: 3px;
+    background: #F2C5DB;
+    display: none;
+}
+
+.content .alert.matched {
+    background: #D4EDDA;
+    color: #588C64;
+    border-color: #C3E6CB;
+}
+
+.content .alert.show {
+    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    width: 100%;
+    height: 34px;
+    border-radius: 3px;
+    background: #F2C5DB;
+
+}
+
+.content .alert p {
+    font-size: 16px;
+    color: #4F0E2D;
+
+}
+
+.content .alert.success {
+    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    width: 100%;
+    height: 34px;
+    border-radius: 3px;
+    background: #32cd32;
+
+}
+
+
+.content .alert.success p {
+    font-size: 16px;
+    color: #006400;
+
+}
+
+
+form .input .showPass {
+    position: absolute;
+    top: 70%;
+    right: 3%;
+    transform: translatey(-50%);
+    font-size: 14px;
+    font-weight: 600;
+    user-select: none;
+    cursor: pointer;
+    color: #FFF;
+    display: none;
+
+}
+
+form .input .showPass.active {
+    color: #27ae60;
+}
+
+.content .input-select {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 34px;
+    border-radius: 4px;
+    outline: none;
+    margin-bottom: 15px;
+    position: relative;
+
+}
+
+.content .input .input-select input {
+
+    width: 50%;
+    height: 34px;
+    border-radius: 3px;
+    border: 1px solid #D9D9D9;
+    background: transparent;
+    color: #D9D9D9;
+    padding: 6px;
+    margin-right: 10px;
+    outline: none;
+    font-size: 16px;
+    transition: all 0.3s;
+    background: transparent;
+
+}
+
+.content input-textarea {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 54px;
+    border-radius: 4px;
+    outline: none;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+
+
+.content .input-textarea textarea {
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 120px;
+    max-height: 300px;
+    resize: none;
+    border-radius: 3px;
+    border: 1px solid #D9D9D9;
+    background: #39404F;
+    color: #D9D9D9;
+    padding: 6px;
+    outline: none;
+    font-size: 16px;
+    background: transparent;
+    margin-bottom: 15px;
+    margin-top: 10px;
+}
+
+.content .input-textarea textarea:focus {
+    border: 1px solid #FFA500;
+    box-shadow: inser 0 0 13px #FFA500;
+}
+
+.content .input .input-select select, option {
+
+    width: 50%;
+    height: 34px;
+    border-radius: 3px;
+    border: 1px solid #D9D9D9;
+    background: #39404F;
+    color: #D9D9D9;
+    padding: 6px;
+    margin-right: 10px;
+    outline: none;
+    font-size: 16px;
+    transition: all 0.3s;
+
+}
+
+.content .input-textarea .input-label {
+    color: #FFF;
+    font-size: 14px;
+}
+
+.content .input .label {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 5px;
+    padding-right: 10px;
+}
+
+.content .input .label .input-label-select {
+
+    color: #FFF;
+    font-size: 14px;
+}
+
+.content .input .input-select select:focus {
+    border: 1px solid #FFA500;
+    box-shadow: inser 0 0 13px #FFA500;
+}
+
+.content .input .input-select input:focus {
+    border: 1px solid #FFA500;
+    box-shadow: inser 0 0 13px #FFA500;
+}
+
+.content .input {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 54px;
+    border-radius: 4px;
+    outline: none;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    position: relative;
+
+
+}
+
+
+
+.content .input .input-label {
+    color: #FFF;
+    padding-bottom: 5px;
+    font-size: 14px;
+}
+
+.content .input input {
+    width: 100%;
+    height: 34px;
+    border-radius: 3px;
+    border: 1px solid #D9D9D9;
+    background: transparent;
+    color: #D9D9D9;
+    padding: 6px;
+    outline: none;
+    font-size: 14px;
+    transition: all 0.3s;
+
+}
+
+.content input:focus {
+    border: 1px solid #FFA500;
+    box-shadow: inser 0 0 13px #FFA500;
+}
+
+.content .forgot-pass {
+    text-align: right;
+    color: #FFA500;
+    font-size: 14px;
+    cursor: pointer;
+    padding-bottom: 20px;
+}
+
+.content .forgot-pass:hover {
+    opacity: 0.8;
+}
+
+button {
+    width: 100%;
+    height: 34px;
+    border-radius: 3px;
+    border: 1px solid #FFA500;
+    background: #FFA500;
+    font-size: 18px;
+    cursor: pointer;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    margin-top: 15px;
+    transition: all 0.3s;
+}
+
+button:hover {
+    background: #F5AD27;
+}
+
+.content .required {
+    color: #FFF;
+}
+
+.content .title-signup {
+    text-align: center;
+    color: #D9D9D9;
+    font-size: 14px;
+    padding: 20px;
+}
+
+.content .title-signup span {
+    color: #FFA500;
+    padding-left: 10px;
+    cursor: pointer;
+}
+
+.content .title-signup span:hover {
+    opacity: 0.8;
+}
