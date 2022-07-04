@@ -19,6 +19,7 @@ if (isset($_FILES)) {
     $aqruivos = $obUpload->getBaseName();
 
     // PEGA EXTENSAO PERMITIDA
+    $extension = false;
     $extension = $obUpload->getExtensionAllowed();
     if ($extension) {
 
@@ -26,7 +27,7 @@ if (isset($_FILES)) {
         print_r($extension);
         echo "</pre>";
         exit; */
-        $sucesso = $obUpload->upload(__DIR__ . '/files');
+        $sucesso = $obUpload->upload(__DIR__ . '/files', $extension);
         if ($sucesso) {
             echo 'Arquivo enviado com sucesso!';
             //exit;

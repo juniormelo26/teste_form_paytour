@@ -65,7 +65,7 @@ class Upload
         echo '<script>alert("Aqrquivo em Formato Inválido!");</script>';
       }
     }
-
+    return $this->$extensionsAllowed;
 
     /*  echo "<pre>";
     var_dump($doc);
