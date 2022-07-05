@@ -1,24 +1,25 @@
 Requisitos do Teste
 
 Criar um formulário para envio de currículos com os seguintes campos:
-Nome,
-e-mail,
-telefone,
-Cargo Desejado (Campo texto livre),
-Escolaridade (Campo select),
-observações,
-arquivo
-e data e hora do envio.
+Nome, - OK
+e-mail, - OK
+telefone, - OK
+Cargo Desejado (Campo texto livre), - OK
+Escolaridade (Campo select), - OK
+observações, - OK
+arquivo - OK
+e data e hora do envio. - OK
 
+================================//================================================================
 Observações:
 
-O formulário deve ser validado
+O formulário deve ser validado - - OK
 
-Apenas o campo observações é opcional
+Apenas o campo observações é opcional - OK
 
-Não devem ser aceitos arquivos que não possuam as seguintes extensões: .doc, .docx ou .pdf
+Não devem ser aceitos arquivos que não possuam as seguintes extensões: .doc, .docx ou .pdf - OK
 
-O tamanho máximo do arquivo é de 1MB
+O tamanho máximo do arquivo é de 1MB - OK
 
 Coloque as validações que você achar necessário
 
@@ -26,9 +27,9 @@ Use o PSR-2 como padrão de codificação - OK
 
 As bibliotecas devem ser carregadas via composer - OK
 
-Fique à vontade para usar qualquer framework da sua preferência (ou nenhum)
+Fique à vontade para usar qualquer framework da sua preferência (ou nenhum) - OK
 
-Os dados devem ser armazenados em um banco de dados. Além das informações acima, o IP e a data e hora do envio devem ficar registrados
+Os dados devem ser armazenados em um banco de dados. Além das informações acima, o IP e a data e hora do envio devem ficar registrados - OK
 
 Um e-mail deve ser enviado com os dados do formulário
 

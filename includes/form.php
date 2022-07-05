@@ -6,17 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="<?php echo $URL; ?>app/assets/css/signUp.css">
-    <title>Teste Paytour - Developer Fullstack</title>
+    <title>Teste Paytour - Desenvolvedor Full Stack</title>
 </head>
 
 <body>
     <div class="wrapper">
         <div class="content">
             <form method="POST" enctype="multipart/form-data">
-                <h4>Teste Paytour - Developer Fullstack</h4>
+                <h4>Teste Paytour - Desenvolvedor Full Stack</h4>
 
                 <div class="alert">
-                    <p>Email ou senha incorretos!</p>
+                    <p></p><!-- EXIBE O ALERTA DE ERRO E/OU SUCESSO -->
                 </div>
 
 
@@ -49,7 +49,7 @@
                 <div class="input">
                     <div class="label">
                         <label class="input-label-select">Escolaridade *</label>
-                        <label class="input-label-select">Curriculo - pdf - doc - docx | máximo: 1MB *</label>
+                        <label class="input-label-select">Arquivo - pdf - doc - docx | máximo: 1MB *</label>
                     </div>
                     <div class="input-select">
 
@@ -60,7 +60,7 @@
                             <option value="3">Superior incompleto</option>
                             <option value="4">Superior completo</option>
                             <option value="5">Pós-graduação incompleto</option>
-                            <option value="6">Pós-graduação incompleto</option>
+                            <option value="6">Pós-graduação completo</option>
 
                         </select>
                         <input type="file" id="arquivo" name="arquivo">
@@ -69,7 +69,7 @@
 
                 <div class="input-textarea">
                     <label class="input-label">Observações</label>
-                    <textarea name="observacao" id="observacao" placeholder="Descreva aqui as informações que achar relevantes!"></textarea>
+                    <textarea name="observacao" id="obs" placeholder="Descreva aqui as informações que achar relevantes!"></textarea>
                 </div>
 
                 <button>Cadastrar</button>

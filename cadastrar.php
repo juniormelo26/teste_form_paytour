@@ -1,13 +1,8 @@
 <?php
-
 require __DIR__ . '/vendor/autoload.php';
 
 use \App\Classes\Cadastro;
-use App\File\Upload;
-
-
-//$obUpload = new Upload;
-
+use App\Classes\Upload;
 
 /* VEIRIFICA SE FILES EXISTE E TRATA O ARQUIVO MOVENDO PARA PASTA files */
 
@@ -17,29 +12,15 @@ if (isset($_FILES)) {
 
     // PEGA O NOME DO ARQUIVO 
     $aqruivos = $obUpload->getBaseName();
-
-    // PEGA EXTENSAO PERMITIDA
-    $extension = false;
-    $extension = $obUpload->getExtensionAllowed();
-    if ($extension) {
-
-        /*  echo "<pre>";
-        print_r($extension);
-        echo "</pre>";
-        exit; */
-        $sucesso = $obUpload->upload(__DIR__ . '/files', $extension);
-        if ($sucesso) {
-            echo 'Arquivo enviado com sucesso!';
-            //exit;
-        }
-        // die('Problemas ao enviar o arquivo');
-    }
+    $sucesso = $obUpload->upload(__DIR__ . '/files');
 }
 
 /* TRATA DOS DADOS PARA ENVIO AO BANCO DE DADOS */
 
+/* PEGA DATA  */
 $data = date("Y-m-d H:i:s");
 
+/* PEGA O IP DO USUARIO */
 $ip = $_SERVER['REMOTE_ADDR'];
 
 $obDados = new Cadastro;
@@ -52,8 +33,6 @@ if (isset(
     $_POST['escolaridade'],
     $_FILES['arquivo'],
     $_POST['observacao']
-
-
 )) {
 
     $obDados->nome          = $_POST['nome'];
@@ -70,7 +49,5 @@ if (isset(
     header('location: index.php?status=success');
     exit;
 }
-
-
 
 include __DIR__ . '/includes/form.php';

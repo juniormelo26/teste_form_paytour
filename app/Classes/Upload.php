@@ -1,6 +1,6 @@
 <?php
 
-namespace App\File;
+namespace App\Classes;
 
 class Upload
 {
@@ -32,11 +32,6 @@ class Upload
     $info = pathinfo($file['name']); // pegando o nome edo arquivo
     $this->name       = $info['filename'];
     $this->extension  = $info['extension'];
-
-    /*  echo "<pre>";
-    print_r($info);
-    echo "</pre>";
-    exit; */
   }
 
   /* Metodo responsavel por retornar o nome do arquivo com sua extensão */
@@ -52,30 +47,6 @@ class Upload
   }
 
 
-
-  /* Metodo para verificar o tipo de arquivo permitido */
-  public function getExtensionAllowed()
-  {
-    if (isset($this->extension)) {
-      $extension = $this->extension;
-
-      $extensionsAllowed = array('doc', 'docx', 'pdf');
-
-      if (!in_array($extension, $extensionsAllowed)) {
-        echo '<script>alert("Aqrquivo em Formato Inválido!");</script>';
-      }
-    }
-    return $this->$extensionsAllowed;
-
-    /*  echo "<pre>";
-    var_dump($doc);
-    var_dump($extension);
-    echo "</pre>";
-    exit; */
-  }
-
-
-
   /* Metodo para enviar (Mover) os arquivos para pasta Files
     @param string $dir
     @return boolean (true ou false)
@@ -89,10 +60,7 @@ class Upload
 
     // CAMINHO COMPLETO DE DESTINO
     $path = $dir . '/' . $this->getBaseName();
-    /*  echo "<pre>";
-    print_r($path);
-    echo "</pre>";
-    exit; */
+
     // MOVE O ARQUIVO PARA PASTA DE DESTINO
     return move_uploaded_file($this->tmpName, $path);
   }
