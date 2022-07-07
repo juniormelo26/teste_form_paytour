@@ -21,7 +21,7 @@ Não devem ser aceitos arquivos que não possuam as seguintes extensões: .doc, 
 
 O tamanho máximo do arquivo é de 1MB - OK
 
-Coloque as validações que você achar necessário
+Coloque as validações que você achar necessário - OK
 
 Use o PSR-2 como padrão de codificação - OK
 
@@ -31,7 +31,7 @@ Fique à vontade para usar qualquer framework da sua preferência (ou nenhum) - 
 
 Os dados devem ser armazenados em um banco de dados. Além das informações acima, o IP e a data e hora do envio devem ficar registrados - OK
 
-Um e-mail deve ser enviado com os dados do formulário
+Um e-mail deve ser enviado com os dados do formulário - OK
 
 Em até 03 (três) dias úteis após o envio do teste estaremos entrando em contato com todos os candidatos
 

@@ -8,9 +8,7 @@ use \PDO;
 class Cadastro
 {
 
-
     public $id;
-
     public $nome;
     public $email;
     public $telefone;
@@ -28,12 +26,16 @@ class Cadastro
 
     public $data;
 
+    /* REMOVENDO CARACTERES NÃO NÚMERICOS DO CAMPO TELEFONE */
+    function removeNonNumbers($telefone)
+    {
+        return preg_replace("/[^0-9]/", "", $telefone);
+    }
 
 
     /* METODO PARA CADASTRAR OS DADOS DO USUARIO 
      RETORNA BOOLEAN
     */
-
     public function cadastrar()
     {
 

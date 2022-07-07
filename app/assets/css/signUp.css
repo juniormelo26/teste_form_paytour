@@ -233,6 +233,7 @@ body {
     box-shadow: inser 0 0 13px var(--color-main-one);
 }
 
+/* 
 .content .input .input-select.alert select:focus {
     border: 1px solid var(--color-main-one);
     box-shadow: inser 0 0 13px var(--color-main-one);
@@ -241,7 +242,7 @@ body {
 .content .input .input-select.alert input:focus {
     border: 1px solid var(--color-main-eight);
 
-}
+} */
 
 .content .input {
     display: flex;

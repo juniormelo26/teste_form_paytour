@@ -20,22 +20,20 @@ class Upload
 
   /* Metodo construtor da classe
   @param array $file $_FILES[campo]
-
   */
   public function __construct($file)
   {
-    $this->type     = $file['type']; // pega o tipo do arquivo
-    $this->tmpName  = $file['tmp_name']; // pega o nome temporario do arquivo
-    $this->error    = $file['error']; // pega o erro caso seja diferente de zero (0 OK) (1,2,3,4,5,6,7,8)
-    $this->size     = $file['size']; // pega o tamanho do arquivo
+    $this->type     = $file['type'];
+    $this->tmpName  = $file['tmp_name'];
+    $this->error    = $file['error'];
+    $this->size     = $file['size'];
 
-    $info = pathinfo($file['name']); // pegando o nome edo arquivo
+    $info = pathinfo($file['name']);
     $this->name       = $info['filename'];
     $this->extension  = $info['extension'];
   }
 
   /* Metodo responsavel por retornar o nome do arquivo com sua extensão */
-
   public function getBaseName()
   {
     // VALIDA A EXTENSÃO
@@ -50,7 +48,6 @@ class Upload
   /* Metodo para enviar (Mover) os arquivos para pasta Files
     @param string $dir
     @return boolean (true ou false)
-
   */
   public function upload($dir)
   {

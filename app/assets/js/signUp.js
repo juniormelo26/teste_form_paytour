@@ -18,15 +18,17 @@ form.addEventListener("submit", async (e) => {
 
 btn.onclick = async () => {
   // PEGANDO VALORES DOS CAMPOS
-  const nome = inputNome.value;
-  const email = inputEmail.value;
-  const telefone = inputTelefone.value;
-  const cargo = inputCargo.value;
+  // USANSO trim() PARA RETIRAR OS ESPAÇOS EM BRANCO
+  const nome = inputNome.value.trim();
+  const email = inputEmail.value.trim();
+  const telefone = inputTelefone.value.replace(/[^0-9]+/g, ""); // REMOVE CARATCTRES ESPECIAIS DA MASCARA
+  const cargo = inputCargo.value.trim();
   const escolaridade = inputEscolaridade.value;
-  const observacao = inputObservacao.value;
+  const observacao = inputObservacao.value.trim();
   const arquivo = inputArquivo.value;
+  console.log(telefone);
 
-  // FUNÇÃO PARA EXIBIR O ALERTA DE ERRO NO FRONT
+  /* FUNÇÃO PARA EXIBIR O ALERTA DE ERRO NO FRONT */
   async function alertError(error) {
     txtAlert.innerText = error;
     alert.classList.add("show");
@@ -35,7 +37,7 @@ btn.onclick = async () => {
     }, 3000);
   }
 
-  // FUNÇÃO PARA EXIBIR O ALERTA DE SUCESSO NO FRONT
+  /*  FUNÇÃO PARA EXIBIR O ALERTA DE SUCESSO NO FRONT */
   async function alertSucces(sucess) {
     txtAlert.innerText = sucess;
     alert.classList.add("success");
@@ -44,9 +46,7 @@ btn.onclick = async () => {
     }, 3000);
   }
 
-  /* FUNÇÃO RESPONSÁVEL PARA VALIDAR TAMANHO DOS ARQUIVOS PARA UPLOAD;
-    TAMANHO PERMITIDO = 1MB
-   */
+  /* FUNÇÃO RESPONSÁVEL PARA VALIDAR TAMANHO DOS ARQUIVOS PARA UPLOAD -  TAMANHO PERMITIDO = 1MB */
   async function fileSize() {
     if (inputArquivo.files && inputArquivo.files[0]) {
       if (inputArquivo.files[0].size > 1048576) {
@@ -60,26 +60,22 @@ btn.onclick = async () => {
       }
     }
   }
-  /* FUNÇÃO RESPONSÁVEL PARA VALIDAR OS TIPOS DE arquivos
-      PERMITIDOS PARA UPLOAD;
-  */
+  /* FUNÇÃO RESPONSÁVEL PARA VALIDAR OS TIPOS DE arquivos PERMITIDOS PARA UPLOAD; */
   async function validateExtensions() {
-    // if (arquivo) {
     const extensoesPermitidas = /(.doc|.docx|.pdf)$/i;
     const extValid = !extensoesPermitidas.exec(arquivo);
     if (extValid) {
       inputArquivo.focus();
-      error = `${arquivo.split(".").pop()} - É UM TIPO DE ARQUIVO INVÁLIDO!`;
+      error = `${arquivo.split(".").pop()} - NÃO É UM ARQUIVO VÁLIDO!`;
       alertError(error);
       inputArquivo.value = "";
       return false;
     } else {
-      fileSize(); /* SE A EXTENSÃO DO ARQUIVO FOR ACEITA CHAMA FUNÇÃO fileSize() */
+      return fileSize(); /* SE A EXTENSÃO DO ARQUIVO FOR ACEITA CHAMA FUNÇÃO fileSize() */
     }
   }
 
   /* FUNÇÃO RESPONAVEL POR ENVIAR OS DADOS */
-
   async function sendData() {
     const dados = new FormData(form);
     const d = await fetch(`./cadastrar.php`, {
@@ -92,9 +88,9 @@ btn.onclick = async () => {
       sucess = "DADOS ENVIADOS COM SUCESSO!";
       alertSucces(sucess);
       form.reset();
-      setTimeout(() => {
+      /*  setTimeout(() => {
         location.href = "index.php";
-      }, 3000);
+      }, 3000); */
     } else {
       error = "NÃO FOI POSSIVEL ENVIAR OS DADOS, TENTE MAIS TARDE!";
       alertError(error);
@@ -102,37 +98,57 @@ btn.onclick = async () => {
     }
   }
 
-  if (nome == "") {
-    inputNome.focus();
-    error = "PREENCHA O CAMPO NOME!";
-    alertError(error);
-  } else if (email == "") {
-    inputEmail.focus();
-    error = "PREENCHA O CAMPO EMAIL!";
-    alertError(error);
-  } else if (telefone == "") {
-    inputTelefone.focus();
-    error = "PREENCHA O CAMPO TELEFONE!";
-    alertError(error);
-  } else if (cargo == "") {
-    inputCargo.focus();
-    error = "PREENCHA O CAMPO CARGO!";
-    alertError(error);
-  } else if (escolaridade == "") {
-    inputEscolaridade.focus();
-    error = "PREENCHA O CAMPO ESCOLARIDADE!";
-    alertError(error);
-  } else if (arquivo == "") {
-    inputArquivo.focus();
-    error = "VOCÊ PRECISA ANEXAR 1 ARQUIVO!";
-    alertError(error);
-  } else {
-    validateExtensions();
+  /* VALIDAÇÃO DE CAMPOS EM NO LADO CLIENTE */
+  async function validateForm() {
+    if (nome === "") {
+      inputNome.value = "";
+      inputNome.focus();
+      alertError((error = "PREENCHA O CAMPO NOME!"));
+    } else if (nome.length < 3) {
+      inputNome.focus();
+      alertError((error = "NOME PRECISA NO MINIMO 3 CARACTERES!"));
+    } else if (email === "") {
+      inputEmail.value = "";
+      inputEmail.focus();
+      error = "PREENCHA O CAMPO EMAIL!";
+      alertError(error);
+    } else if (!isEmail(email)) {
+      inputEmail.value = "";
+      inputEmail.focus();
+      error = "INFORME UM EMAIL VÁLIDO!";
+      alertError(error);
+    } else if (telefone === "") {
+      inputTelefone.focus();
+      error = "PREENCHA O CAMPO TELEFONE!";
+      alertError(error);
+    } else if (cargo === "") {
+      inputCargo.value = "";
+      inputCargo.focus();
+      error = "PREENCHA O CAMPO CARGO!";
+      alertError(error);
+    } else if (escolaridade === "") {
+      inputEscolaridade.focus();
+      error = "PREENCHA O CAMPO ESCOLARIDADE!";
+      alertError(error);
+    } else if (arquivo === "") {
+      inputArquivo.focus();
+      error = "VOCÊ PRECISA ANEXAR 1 ARQUIVO!";
+      alertError(error);
+    } else {
+      validateExtensions();
+    }
   }
+  validateForm();
 };
 
-// FUNÇÃO PARA MASCARA DE TELEFONE
-function mask(o, f) {
+/* FUNÇÃO PARA VALIDAR EMAIL */
+function isEmail(email) {
+  return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
+    email
+  );
+}
+/* FUNÇÃO PARA MASCARA DE TELEFONE */
+function mask(o) {
   setTimeout(function () {
     var v = telefone(o.value);
     if (v != o.value) {
@@ -143,7 +159,7 @@ function mask(o, f) {
 
 function telefone(v) {
   var r = v.replace(/\D/g, "");
-  r = r.replace(/^0/, ""); //limpa o campo se começar com ZERO (0)
+  r = r.replace(/^0/, "");
   if (r.length > 10) {
     r = r.replace(/^(\d\d)(\d{5})(\d{4}).*/, "($1) $2-$3");
   } else if (r.length > 5) {

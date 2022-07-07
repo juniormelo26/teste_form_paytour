@@ -28,8 +28,8 @@
 
                     <div class="input-select">
 
-                        <input type="text" name="nome" id="nome" placeholder="Nome">
-                        <input type="text" name="email" id="email" placeholder="Email">
+                        <input type="text" name="nome" id="nome" placeholder="Ex. Ana, Antonio de Melo">
+                        <input type="email" name="email" id="email" placeholder="Ex. juniormelo26@hotmail.com">
 
                     </div>
                 </div>
@@ -41,8 +41,8 @@
 
                     <div class="input-select">
 
-                        <input type="text" name="telefone" id="telefone" onkeypress="mask(this, telefone);" onblur="mask(this, telefone);" placeholder="Telefone">
-                        <input type="text" name="cargo" id="cargo" placeholder="Cargo desjejado">
+                        <input type="telefone" name="telefone" id="telefone" onkeypress="mask(this, telefone);" onblur="mask(this, telefone);" placeholder="Ex. (84) 98814-7799">
+                        <input type="text" name="cargo" id="cargo" placeholder="Ex. Desenvolvedor FullStack">
 
                     </div>
                 </div>
@@ -55,12 +55,12 @@
 
                         <select class="select" id="escolaridade" name="escolaridade">
                             <option value="">Escolaridade</option>
-                            <option value="1">Médio incompleto</option>
-                            <option value="2">Médio completo</option>
-                            <option value="3">Superior incompleto</option>
-                            <option value="4">Superior completo</option>
-                            <option value="5">Pós-graduação incompleto</option>
-                            <option value="6">Pós-graduação completo</option>
+                            <option value="Medio incompleto">Médio incompleto</option>
+                            <option value="Medio completo">Médio completo</option>
+                            <option value="Superior incompleto">Superior incompleto</option>
+                            <option value="Superior completo">Superior completo</option>
+                            <option value="Pos-graduação incompleto">Pós-graduação incompleto</option>
+                            <option value="Pos-graduação completo">Pós-graduação completo</option>
 
                         </select>
                         <input type="file" id="arquivo" name="arquivo">
