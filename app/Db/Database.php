@@ -18,19 +18,19 @@ class Database
      * Nome do banco de dados
      * @var string
      */
-    const NAME = 'paytour';
+    const NAME = 'NOME DO SEU BANCO DE DADOS';
 
     /**
      * Usuário do banco
      * @var string
      */
-    const USER = 'root';
+    const USER = 'SEU USUARIO DO BANCO DE DADOS';
 
     /**
      * Senha de acesso ao banco de dados
      * @var string
      */
-    const PASS = '7799';
+    const PASS = 'SUA SENHA DO BANCO DE DADOS';
 
     /**
      * Nome da tabela a ser manipulada
@@ -93,9 +93,6 @@ class Database
     {
         //DADOS DA QUERY
         $fields = array_keys($values);
-        /*   echo "<pre>";
-        print_r($fields);
-        echo "</pre>"; */
 
         $binds  = array_pad([], count($fields), '?');
 

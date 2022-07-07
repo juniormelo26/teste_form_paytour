@@ -10,17 +10,16 @@ use Exception;
 class Email
 {
 
-    /* CREDENCIAIS DE ACESSO SMTP */
+    /* CREDENCIAIS DE ACESSO SMTP UTILIZANDO GMAIL*/
     const HOST      = 'smtp.gmail.com';
-    const USER      = 'trackerweb.sistema@gmail.com';
-    const PASS      = 'hqapknkggscawawj';
+    const USER      = 'seuemailgmail@gmail.com';
+    const PASS      = 'sua senha '; // CRIAR SENHA DE APP DO GOOGLE PARA O EMAIL ACIMA-> https://myaccount.google.com/security?hl=pt_BR
     const SECURE    = 'TLS';
     const PORT      = '587';
     const CHARSET   = 'UTF-8';
 
-
     /* DADOS DO REMETENTE */
-    const FROM_EMAIL = 'trackerweb.sistema@gmail.com';
+    const FROM_EMAIL = 'juniormelo26@gmail.com';
     const FROM_NAME = 'Antonio de Melo Sousa Junior';
 
 

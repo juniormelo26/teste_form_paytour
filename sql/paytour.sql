@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Tempo de geração: 04-Jul-2022 às 16:59
+-- Tempo de geração: 06-Jul-2022 às 23:33
 -- Versão do servidor: 8.0.29
 -- versão do PHP: 8.0.20
 
@@ -34,19 +34,12 @@ CREATE TABLE `curriculos` (
   `email` varchar(150) CHARACTER SET utf8mb3 COLLATE utf8_general_ci NOT NULL,
   `telefone` varchar(30) CHARACTER SET utf8mb3 COLLATE utf8_general_ci NOT NULL,
   `cargo` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8_general_ci NOT NULL,
-  `escolaridade` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8_general_ci NOT NULL COMMENT '                         <"1"> Médio incompleto                         <"2"> Médio completo                         "3"> Superior incompleto                         "4"> Superior completo                         "5"> Pós-graduação incompleto                         "6"> Pós-graduação incompleto',
+  `escolaridade` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8_general_ci NOT NULL,
   `observacao` text CHARACTER SET utf8mb3 COLLATE utf8_general_ci NOT NULL,
   `arquivo` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8_general_ci NOT NULL,
   `ip` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8_estonian_ci NOT NULL,
   `data` timestamp NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
-
---
--- Extraindo dados da tabela `curriculos`
---
-
-INSERT INTO `curriculos` (`id`, `nome`, `email`, `telefone`, `cargo`, `escolaridade`, `observacao`, `arquivo`, `ip`, `data`) VALUES
-(1, 'Antonio de Melo Sousa Junior', 'juniormelo26@hotmail.com', '(84) 98814-7799', 'Desenvolvedor FullStack', '3', 'ESTE É UM TESTE DE TEXTAREA', 'home.png', '::1', '2022-07-03 23:19:48');
 
 --
 -- Índices para tabelas despejadas
@@ -66,7 +59,7 @@ ALTER TABLE `curriculos`
 -- AUTO_INCREMENT de tabela `curriculos`
 --
 ALTER TABLE `curriculos`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

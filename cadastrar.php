@@ -70,9 +70,9 @@ if (isset(
 
         /* FORMATA OS DADOS PARA ENVIO DO EMAIL COM DADOS DO FORMULÁRIO*/
 
-        $address = 'adrianapaula81@hotmail.com';
+        $address = 'juniormelo26@gmail.com';
         $cc = $email;
-        $subject = 'Teste de Aaliação - Desenvolvedor Full Stack';
+        $subject = 'Teste de Avaliação Desenvolvedor Full Stack';
         $messageForm = '<b>NOME:</b> ' . $nome . '<br>' .
             '<b>EMAIL:</b> ' . $email . '<br>' .
             '<b>TELEFONE:</b> ' . $telefone . '<br>' .
@@ -80,7 +80,7 @@ if (isset(
             '<b>ESCOLARIDADE:</b> ' . $escolaridade . '<br>' .
             '<b>OBSERVAÇÃO:</b> ' . $observacao . '<br>' .
             '<b>DATA/HORA DO ENVIO:</b> ' . $data . '<br>' .
-            '<b>IP DO CLIENTE:</b> ' . $ip;
+            '<b>IP DE ORIGEM:</b> ' . $ip;
         $body = $messageForm;
         $attachment = __DIR__ . '/files' . '/' . $arquivo;
 
@@ -94,12 +94,5 @@ if (isset(
         exit;
     }
 }
-/* Olá, este é o envio pelo formulário requisitado no teste para vaga de Desenvolvedor Full Stack.
-
-Segue anexo meu curriculo e abixo algumas informações pertinentes a minha pessoa.
-
-Link do projeto funcionando: http://juniormelo.dev.br/paytour
-Link do meu protifólio: https://juniormelo.dev.br
- */
 
 include __DIR__ . '/includes/form.php';
