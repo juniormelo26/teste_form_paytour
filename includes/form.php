@@ -11,7 +11,9 @@
 
 <body>
     <div class="wrapper">
+
         <div class="content">
+            <a href="index.php">Voltar para Home</a>
             <form method="POST" enctype="multipart/form-data">
                 <h4>Teste Paytour - Desenvolvedor Full Stack</h4>
 

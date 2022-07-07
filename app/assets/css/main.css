@@ -1,0 +1,116 @@
+/* FONTES EXTERNAS */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,700&display=swap');
+
+/* DECLARANDO VARIAVEIS PARA CORES */
+:root {
+
+    /* BUTTONS - BORDERS FOCUS NORMAL*/
+    --color-main-one: #FFA500;
+
+
+    --color-main-two: #FFFFFF;
+
+    /* BACKGROUND/BODY */
+    --color-main-tree: #39404F;
+
+    /* BORDER */
+    --color-main-four: #D9D9D9;
+
+}
+
+/* RESET */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* LINKS */
+a {
+    text-decoration: none;
+    color: var(--color-main-one);
+    padding-top: 10px !important;
+}
+
+a:hover {
+
+    color: var(--color-main-four);
+
+}
+
+/* BODY */
+body {
+    background: var(--color-main-tree);
+}
+
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.content {
+    width: 100%;
+    max-width: 850px;
+    border-radius: 4px;
+    border: 1px solid var(--color-main-four);
+    padding: 30px;
+    margin: 20px;
+}
+
+.content h4 {
+    text-align: center;
+    font-size: 22px;
+    color: var(--color-main-two);
+    font-weight: 400;
+    margin-top: -15px;
+}
+
+.content .informations {
+
+    height: 200px;
+    width: 100%;
+    padding: 50px;
+}
+
+.content .informations p {
+    color: var(--color-main-two);
+    padding-bottom: 10px;
+}
+
+.content .informations p span {
+    color: var(--color-main-one);
+    padding-left: 15px;
+
+}
+
+
+button {
+    width: 100%;
+    height: 34px;
+    border-radius: 3px;
+    border: 1px solid var(--color-main-one);
+    background: var(--color-main-one);
+    font-size: 18px;
+    cursor: pointer;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    margin-top: 15px;
+    transition: all 0.3s;
+
+}
+
+
+
+button .btn:hover {
+    color: var(--color-main-one);
+}
+
+button:hover {
+    background: transparent;
+    color: var(--color-main-one);
+}
