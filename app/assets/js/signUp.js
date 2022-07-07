@@ -88,9 +88,9 @@ btn.onclick = async () => {
       sucess = "DADOS ENVIADOS COM SUCESSO!";
       alertSucces(sucess);
       form.reset();
-      /*  setTimeout(() => {
+      setTimeout(() => {
         location.href = "index.php";
-      }, 3000); */
+      }, 3000);
     } else {
       error = "NÃO FOI POSSIVEL ENVIAR OS DADOS, TENTE MAIS TARDE!";
       alertError(error);

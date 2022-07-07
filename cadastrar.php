@@ -16,7 +16,7 @@ if (isset($_FILES['arquivo'])) {
     // PEGA O NOME DO ARQUIVO 
     $arquivo = $obUpload->getBaseName();
 
-    //MOVE O ARQUIVO PARA PSTA files
+    //MOVE O ARQUIVO PARA PASTA files
     $sucesso = $obUpload->upload(__DIR__ . '/files');
 }
 
@@ -71,7 +71,7 @@ if (isset(
         /* FORMATA OS DADOS PARA ENVIO DO EMAIL COM DADOS DO FORMULÁRIO*/
 
         $address = 'juniormelo26@gmail.com';
-        $cc = $email;
+        $cc = $email; // ENVIA CÓPIA DOS DADOS PARA O EMAIL INSERIDO NO FORMULÁRIO
         $subject = 'Teste de Avaliação Desenvolvedor Full Stack';
         $messageForm = '<b>NOME:</b> ' . $nome . '<br>' .
             '<b>EMAIL:</b> ' . $email . '<br>' .

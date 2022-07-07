@@ -89,7 +89,7 @@ class Email
             $obMail->Subject = $subject;
             $obMail->Body = $body;
 
-            //ENCIA O EMAIL
+            //ENVIA O EMAIL
             return $obMail->send();
         } catch (Exception $e) {
             $this->error = $e->getMessage();

@@ -48,9 +48,7 @@ class Cadastro
 
         /* INSERE OS DADOS NO BANCO */
         $obDatabase = new Database('curriculos');
-        /* echo "<pre>";
-        print_r($obDatabase);
-        echo "</pre>"; */
+
         $this->id = $obDatabase->insert([
             'nome' => $this->nome,
             'email' => $this->email,
